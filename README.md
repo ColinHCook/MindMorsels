@@ -1,6 +1,6 @@
 # MindMorsels - Chrome Extension
 
-![MindMorsels Logo]icons/icon.png)
+![MindMorsels Logo](icons/icon.png)
 
 **MindMorsels** is a Chrome extension that transforms your new tab page into a source of daily learning by displaying random, bite-sized facts. Whether you're a trivia enthusiast or just curious, MindMorsels offers a fun way to expand your knowledge with every new tab you open.
 
