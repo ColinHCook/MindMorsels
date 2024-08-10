@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindMorsels</title>
+    <!-- Link to Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Nugget Container */
+      #nugget {
+        height: 125px; /* Set a fixed height */
+        overflow: auto; /* Hide overflow */
+        text-overflow: ellipsis; /* Add ellipsis if text is too long */
+        display: -webkit-box; /* Display as a box */
+        -webkit-box-orient: vertical; /* Set box orientation to vertical */
+        line-height: 1.5; /* Set line height for better readability */
+      }
+
+      #popup {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Overlay with Subtle Patterns -->
+    <div
+      class="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-300 to-green-300 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 opacity-10"
+        style="
+          background-image: url('path-to-your-background-pattern.png');
+          background-size: cover;
+        "
+      ></div>
+
+      <!-- Central Content Block -->
+      <div
+        class="bg-white rounded-lg shadow-lg p-8 max-w-xl text-center relative z-10"
+      >
+        <h1
+          class="text-5xl font-bold mb-4"
+          style="font-family: 'Roboto', sans-serif"
+        >
+          MindMorsels
+        </h1>
+
+        <p class="text-2xl text-gray-800 mb-6" id="nugget">
+          Your random learning nugget goes here!
+        </p>
+
+        <!-- Button Row -->
+        <div class="flex justify-center space-x-4">
+          <button
+            id="like-button"
+            class="py-2 px-4 bg-green-500 text-white rounded-full shadow hover:shadow-lg hover:scale-205 transition duration-200"
+          >
+            👍 Like
+          </button>
+
+          <button
+            class="py-2 px-6 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-full shadow hover:shadow-lg hover:scale-105 transition duration-200"
+            onclick="nextNugget()"
+          >
+            Next Nugget
+          </button>
+          <button
+            id="dislike-button"
+            class="py-2 px-4 bg-red-500 text-white rounded-full shadow hover:shadow-lg hover:scale-105 transition duration-200"
+          >
+            👎 Dislike
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="popup"
+        class="fixed bottom-10 right-10 bg-gray-800 text-white py-2 px-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300"
+        style="display: none"
+      >
+        <p id="popup-message"></p>
+      </div>
+
+      <!-- Quick Links Row -->
+      <div class="flex space-x-6 mt-8 relative z-10">
+        <a
+          href="https://gmail.com"
+          target="_blank"
+          class="transform hover:scale-110 transition duration-150"
+          ><img src="icons/gmail_icon.svg" alt="Gmail" class="w-8 h-8"
+        /></a>
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          class="transform hover:scale-110 transition duration-150"
+          ><img src="icons/youtube_icon.svg" alt="YouTube" class="w-8 h-8"
+        /></a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="transform hover:scale-110 transition duration-150"
+          ><img src="icons/facebook_icon.svg" alt="Facebook" class="w-8 h-8"
+        /></a>
+        <a
+          href="https://x.com"
+          target="_blank"
+          class="transform hover:scale-110 transition duration-150"
+          ><img src="icons/x_icon.svg" alt="X" class="w-8 h-8"
+        /></a>
+        <a
+          href="https://reddit.com"
+          target="_blank"
+          class="transform hover:scale-110 transition duration-150"
+          ><img src="icons/reddit_icon.svg" alt="Reddit" class="w-8 h-8"
+        /></a>
+        <a
+          href="https://twitch.tv"
+          target="_blank"
+          class="transform hover:scale-110 transition duration-150"
+          ><img src="icons/twitch_icon.svg" alt="Twitch" class="w-8 h-8"
+        /></a>
+      </div>
+
+      <!-- Google Search Bar -->
+      <div class="mt-8 relative z-10">
+        <form
+          action="https://www.google.com/search"
+          method="GET"
+          class="w-full max-w-3xl"
+        >
+          <input
+            type="text"
+            name="q"
+            class="border border-gray-300 rounded-full p-4 shadow-lg focus:outline-none focus:ring focus:ring-blue-500 text-lg w-full"
+            placeholder="Search Google..."
+          />
+        </form>
+      </div>
+    </div>
+
+    <script src="newtab.js"></script>
+  </body>
+</html>
